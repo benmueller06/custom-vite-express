@@ -1,4 +1,4 @@
-# vite-express-templates
+# custom-vite-express
 
 A [`vite-express`](https://github.com/szymmis/vite-express) server with custom vite plugins for extra features like partials, variable injection and mapping. Made as part of a university project.
 
