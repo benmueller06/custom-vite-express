@@ -16,7 +16,7 @@ After you've enabled corepack, run the following command to install all required
 pnpm install
 ```
 
-And that's it! You can now start the server by running `pnpm` dev in your terminal. This will:
+And that's it! You can now start the server by running `pnpm dev` in your terminal. This will:
 
 1. Start a development server that automatically restarts when a file changes
 2. Automatically bind to your localhost at port 3000
