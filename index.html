@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <img src="startbild.jpg" alt="Logo" class="logo">
     <h1>Training & Nutrition App</h1>
   </header>
 
@@ -16,7 +17,7 @@
       <li><a href="workout.html">Workouts</a></li>
       <li><a href="recipes.html">Recipes</a></li>
       <li><a href="tracker.html">Calories Tracker</a></li>
-      <li><a href="personalInfos.html">Personal Infos</a></li>
+      <li><a href="personalInformation.html">Personal Infos</a></li>
       <li><a href="diary.html">Diary</a></li>
     </ul>
   </nav>
@@ -24,64 +25,47 @@
   <main>
     <div class="fullscreen-bg"></div>
 
-    <section id="workout">
-      <h2>Today's Workout</h2>
-      <div id="workout-list">
-        <ul>
-          <li>Push-ups - 3 sets of 15 reps</li>
-          <li>Squats - 3 sets of 20 reps</li>
-          <li>Plank - 3 sets of 1 minute</li>
-        </ul>
+    <div class="container">
+      <div class="textblock">Willkommen bei unserer Fitness-App!<br><br>
+        Schön, dass du dich für ein aktiveres und gesünderes Leben entschieden hast.<br> 
+        Unsere App unterstützt dich dabei, deine persönlichen Fitnessziele zu erreichen – egal, ob du Muskeln aufbauen, Gewicht verlieren oder einfach deine Ausdauer verbessern möchtest.<br>
+        
+        Hier findest du individuell angepasste Trainingspläne, hilfreiche Ernährungstipps und eine übersichtliche Fortschrittsverfolgung, damit du stets motiviert bleibst.<br> 
+        Starte jetzt und mache den ersten Schritt auf deiner Fitnessreise. Dein Erfolg beginnt heute. 
       </div>
-    </section>
 
-    <section id="recipes">
-      <h2>Healthy Recipes</h2>
-      <div class="recipe" id="recipe1">
-        <h3>Grilled Chicken Salad</h3>
-        <p>Calories: 300 kcal</p>
-        <button onclick="addRecipeCalories(300)">Add Calories</button>
+      <div class="textblock"><br>Befolge folgende Schritte um bestmöglich in dein neues Leben einzusteigen:<br><br>
+        1.    Klicke auf personal Infos um dich bei uns anzumelden<br>
+        2.    Wenn du dich angemeldet hast kannst du dich auf unsere Website umschauen. Wir haben viele verschiedene interessante Dinge zu sehen für dich.<br>
+        3.    Unser Angebot:<br><br>
+              - Workouts<br>
+              - Rezepte<br>
+              - Kaolrienzähler<br>
+              - Tagebuch<br>
       </div>
-      <div class="recipe" id="recipe2">
-        <h3>Vegetable Stir-Fry</h3>
-        <p>Calories: 250 kcal</p>
-        <button onclick="addRecipeCalories(250)">Add Calories</button>
-      </div>
-    </section>
+    </div>
 
-    <section id="tracker">
-      <h2>Calories Tracker</h2>
-      <p>Total Calories: <span id="totalCalories">0</span> kcal</p>
-      <p>Daily Goal: <span id="goalCalories">2000</span> kcal</p>
-    </section>
-
-    <section id="personalInfos">
-      <h2>Put in your personal Information</h2>
-      <p>
-        <ul>
-          <li>Name:</li>
-          <li>Age:</li>
-          <li>Weigth:</li>
-        </ul>
-      </p>
-    </section>
-
-    <section id="diary">
-      <h2>Diary for your Fitness</h2>
-      <p>
-        <ul>
-          <li>Monday: ...Calories</li>
-          <li>Tuseday: ...Calories</li>
-          <li>Wednesday: ...Calories</li>
-        </ul>
-      </p>
-    </section>
   </main>
 
 
-  <footer>
-    <p>&copy; 2025 Training & Nutrition App</p>
-  </footer>
+<footer>
+  <div class="footer-content">
+      <p>&copy; 2025 Dein Unternehmen. Alle Rechte vorbehalten.</p>
+      <nav>
+          <ul>
+              <li><a href="#impressum">Impressum</a></li>
+              <li><a href="#datenschutz">Datenschutz</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+      </nav>
+      <div class="social-media">
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+      </div>
+  </div>
+</footer>
+
 
   <script src="script.js"></script>
 </body>
