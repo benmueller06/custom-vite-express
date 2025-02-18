@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Information</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 8px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="logo.jpg" alt="Logo" class="logo"></a>
+    <h1>Persönliche Daten</h1>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Steckbrief</h2>
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Hier eingeben">
+
+        <label for="alter">Alter:</label>
+        <input type="number" id="alter" name="alter" placeholder="Hier eingeben">
+
+        <label for="gewicht">Gewicht:</label>
+        <input type="number" id="gewicht" name="gewicht" placeholder="Hier eingeben">
+
+        <label for="groesse">Größe:</label>
+        <input type="float" id="groesse" name="groesse" placeholder="Hier eingeben">
+
+        <button type="submit">Absenden</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+
+  <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Dein Unternehmen. Alle Rechte vorbehalten.</p>
+        <nav>
+            <ul>
+                <li><a href="#impressum">Impressum</a></li>
+                <li><a href="#datenschutz">Datenschutz</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
