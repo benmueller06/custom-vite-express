@@ -1,10 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipes</title>
+  <title>Workouts</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fcfa;
+      color: #707070;
+    }
+
+    header {
+      background-color: #32cd75;
+      color: #050a08;
+      padding: 15px;
+      display: flex;  /* Flexbox aktiviert */
+      align-items: center;  /* Vertikal zentrieren */
+      justify-content: space-between;  /* Sorgt für Abstand zwischen Logo und Überschrift */
+    }
+
+    .logo {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        max-width: 640px;
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .video-container iframe:hover {
+        transform: scale(1.03);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        color: #333;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 30px;
+        background-color: #333;
+        color: #fff;
+    }
+
+    footer ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    footer ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+    }
+
+    footer a:hover {
+        color: #ff9800;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,37 +116,59 @@
   <main>
     <section>
       <h2>Brust Workout:</h2>
-      <p>
-        - Bankdrücken (Lang und Kurzhantel)<br>
-        - Liegestütze<br>
-      </p>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/fX5AbAPH37g"
+          title="Brust Workout"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p>🏋️ Bankdrücken (Lang- und Kurzhantel)<br>🤸 Liegestütze</p>
     </section>
 
     <section>
-      <section>
-        <h2>Bauch Workout:</h2>
-        <p>
-          - Sit Ups<br>
-          - Plank<br>
-        </p>
-      </section>
+      <h2>Bauch Workout:</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/84EkBBwJc3A"
+          title="Bauch Workout"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p>💪 Sit Ups<br>🪵 Plank</p>
+    </section>
 
-      <section>
-        <h2>Rücken Workout:</h2>
-        <p>
-          - Rudern (Eng oder Breit)<br>
-          - Klimmzüge<br>
-        </p>
-      </section>
+    <section>
+      <h2>Rücken Workout:</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/69YpS8NwvFk"
+          title="Rücken Workout"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p>🏃 Rudern (Eng oder Breit)<br>🧗 Klimmzüge</p>
+    </section>
 
-      <section>
-        <h2>Bein Workout:</h2>
-        <p>
-          - Beinpresse<br>
-          - Kniebeugen<br>
-        </p>
-      </section>
-
+    <section>
+      <h2>Bein Workout:</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/watch?v=bcH-qcnpy20"
+          title="Bein Workout"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p>🦵 Beinpresse<br>🏋️ Kniebeugen</p>
+    </section>
   </main>
 
   <footer>
