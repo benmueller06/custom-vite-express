@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tracker</title>
+  <title>Kalorienzähler</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,38 @@
 
   <main>
     <section>
-      <h2>Deine heutigen Verbrauchten Kaolrien:</h2>
-      <p>Heute hast du bereits: 500 kcal verbraucht.</p>
+      <h2>Deine heutigen verbrannten Kalorien:</h2>
+      <p>Heute hast du bereits: <span id="caloriesBurned">500</span> kcal verbrannt.</p>
+    </section>
+
+    <section>
+      <h2>Kalorienrechner</h2>
+      <label>Gewicht (kg): <input type="number" id="weight"></label>
+      <label>Größe (cm): <input type="number" id="height"></label>
+      <label>Alter: <input type="number" id="age"></label>
+      <label>Geschlecht: 
+        <select id="gender">
+          <option value="male">Männlich</option>
+          <option value="female">Weiblich</option>
+        </select>
+      </label>
+      <label>Aktivitätslevel: 
+        <select id="activity">
+          <option value="1.2">Sitzend</option>
+          <option value="1.375">Leicht aktiv</option>
+          <option value="1.55">Mäßig aktiv</option>
+          <option value="1.725">Sehr aktiv</option>
+          <option value="1.9">Extrem aktiv</option>
+        </select>
+      </label>
+      <button onclick="calculateCalories()">Berechnen</button>
+
+      <h3>Ergebnisse:</h3>
+      <p>Grundumsatz (BMR): <span id="bmr"></span> kcal</p>
+      <p>Gesamtumsatz (TDEE): <span id="tdee"></span> kcal</p>
+      <p>Muskelaufbau (+15%): <span id="bulk"></span> kcal</p>
+      <p>Gewicht halten: <span id="maintain"></span> kcal</p>
+      <p>Gewichtsabnahme (-15%): <span id="cut"></span> kcal</p>
     </section>
   </main>
 
@@ -36,5 +66,32 @@
         </div>
     </div>
   </footer>
+
+  <script>
+    function calculateCalories() {
+        let weight = parseFloat(document.getElementById('weight').value);
+        let height = parseFloat(document.getElementById('height').value);
+        let age = parseInt(document.getElementById('age').value);
+        let gender = document.getElementById('gender').value;
+        let activity = parseFloat(document.getElementById('activity').value);
+
+        let bmr;
+        if (gender === 'male') {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+
+        let tdee = bmr * activity;
+        let bulk = tdee * 1.15;
+        let cut = tdee * 0.85;
+
+        document.getElementById('bmr').innerText = Math.round(bmr);
+        document.getElementById('tdee').innerText = Math.round(tdee);
+        document.getElementById('bulk').innerText = Math.round(bulk);
+        document.getElementById('maintain').innerText = Math.round(tdee);
+        document.getElementById('cut').innerText = Math.round(cut);
+    }
+  </script>
 </body>
 </html>
