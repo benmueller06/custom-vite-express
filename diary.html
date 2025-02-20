@@ -12,7 +12,18 @@
     <h1>Tagebuch</h1>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="tracker.html">Calories Tracker</a></li>
+      <li><a href="personalInformation.html">Personal Infos</a></li>
+      <li><a href="diary.html">Diary</a></li>
+    </ul>
+  </nav>
+
   <main>
+    <div class="fullscreen-bg"></div>
     <section>
       <h2>Montag:</h2>
       <p>
@@ -35,6 +46,14 @@
         300 kcal verbraucht
       </p>
     </section>
+
+    <form>
+      <label for="Datum">Datum:</label>
+      <input type="float" id="datum" name="datum" placeholder="Geben sie das Datum ein welches sie tracken wollen. ">
+
+      <label for="Kalorien">Kalorien:</label>
+      <input type="float" id="kalorien" name="kalorien" placeholder="Geben sie die Anzahl ihrer Kalorien an. ">
+    </form>
 
   </main>
 
