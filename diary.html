@@ -5,7 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipes</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    form {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;              
+        width: 300px;           
+    }
+
+    label {
+        font-weight: bold;     
+    }
+
+    input[type="text"], input[type="number"], input[type="date"] {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #entries {
+        margin-top: 30px;
+    }
+
+    .entry {
+        color: black;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .delete-btn {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .delete-btn:hover {
+        background-color: #ff1a1a;
+    }
+
+  </style>
 </head>
+
 <body>
   <header>
     <a href="index.html"><img src="logo.jpg" alt="Logo" class="logo"></a>
@@ -15,46 +66,29 @@
   <nav>
     <ul>
       <li><a href="workout.html">Workouts</a></li>
-      <li><a href="recipes.html">Recipes</a></li>
-      <li><a href="tracker.html">Calories Tracker</a></li>
-      <li><a href="personalInformation.html">Personal Infos</a></li>
-      <li><a href="diary.html">Diary</a></li>
+      <li><a href="recipes.html">Rezepte</a></li>
+      <li><a href="tracker.html">Kalorienzähler</a></li>
+      <li><a href="personalInformation.html">Persönliche Daten</a></li>
+      <li><a href="diary.html">Tagebuch</a></li>
     </ul>
   </nav>
 
   <main>
     <div class="fullscreen-bg"></div>
     <section>
-      <h2>Montag:</h2>
-      <p>
-        2200 kcal gegessen<br>
-        500 kcal verbraucht
-      </p>
+      <h2>Bisherige Einträge:</h2>
+      <div id="entries"></div> 
     </section>
 
-    <section>
-      <h2>Dienstag:</h2>
-      <p>
-        2000 kcal gegessen<br>
-        0 kcal verbraucht
-      </p>
-    </section>
-    <section>
-      <h2>Mittwoch:</h2>
-      <p>
-        2600 kcal gegessen<br>
-        300 kcal verbraucht
-      </p>
-    </section>
+    <form id="calorieForm">
+      <label for="datum">Datum:</label>
+      <input type="date" id="datum" name="datum" placeholder="Datum eingeben" required>
 
-    <form>
-      <label for="Datum">Datum:</label>
-      <input type="float" id="datum" name="datum" placeholder="Geben sie das Datum ein welches sie tracken wollen. ">
-
-      <label for="Kalorien">Kalorien:</label>
-      <input type="float" id="kalorien" name="kalorien" placeholder="Geben sie die Anzahl ihrer Kalorien an. ">
+      <label for="kalorien gegessen">Kalorien gegessen:</label>
+      <input type="number" id="kalorien" name="kalorien" placeholder="Anzahl der Kalorien" required>
+      
+      <button type="submit">Absenden</button>
     </form>
-
   </main>
 
   <footer>
@@ -74,5 +108,58 @@
         </div>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById('calorieForm');
+    const entriesDiv = document.getElementById('entries');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedEntries = JSON.parse(localStorage.getItem('calorieEntries')) || [];
+        savedEntries.forEach(entry => addEntryToPage(entry));
+    });
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const datum = document.getElementById('datum').value;
+        const kalorien = document.getElementById('kalorien').value;
+
+        if (datum && kalorien) {
+            const id = Date.now(); 
+            const newEntry = { id, datum, kalorien };
+            addEntryToPage(newEntry);
+            saveEntry(newEntry);
+            form.reset();
+        }
+    });
+
+    function addEntryToPage(entry) {
+        const entryDiv = document.createElement('div');
+        entryDiv.className = 'entry';
+        entryDiv.setAttribute('data-id', entry.id);
+        entryDiv.innerHTML = `
+            <span><strong>${entry.datum}:</strong> ${entry.kalorien} kcal</span>
+            <button class="delete-btn">Löschen</button>
+        `;
+        entriesDiv.appendChild(entryDiv);
+
+        entryDiv.querySelector('.delete-btn').addEventListener('click', function() {
+            deleteEntry(entry.id);
+            entryDiv.remove(); 
+        });
+    }
+
+    function saveEntry(entry) {
+        const savedEntries = JSON.parse(localStorage.getItem('calorieEntries')) || [];
+        savedEntries.push(entry);
+        localStorage.setItem('calorieEntries', JSON.stringify(savedEntries));
+    }
+
+    function deleteEntry(id) {
+        let savedEntries = JSON.parse(localStorage.getItem('calorieEntries')) || [];
+        savedEntries = savedEntries.filter(entry => entry.id !== id); 
+        localStorage.setItem('calorieEntries', JSON.stringify(savedEntries));
+    }
+  </script>
 </body>
 </html>
