@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCalories();
   };
 
-  // Navigation fix (Korrigiert die Navigation, damit die Links funktionieren)
   document.querySelectorAll("nav ul li a").forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Funktion zur Speicherung der persönlichen Infos
   document.getElementById("personalInfos").innerHTML += `
     <form id="infoForm">
       <label for="name">Name:</label>
