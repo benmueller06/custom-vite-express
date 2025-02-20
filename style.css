@@ -11,21 +11,21 @@ header {
   background-color: #32cd75;
   color: #050a08;
   padding: 15px;
-  display: flex;  /* Flexbox aktiviert */
-  align-items: center;  /* Vertikal zentrieren */
-  justify-content: space-between;  /* Sorgt für Abstand zwischen Logo und Überschrift */
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;  
 }
 
 header .logo {
-  width: 100px; /* Logo-Breite */
-  height: 50px; /* Logo-Höhe */
+  width: 100px;
+  height: 50px; 
 }
 
 header h1 {
   font-size: 1.5em;
   margin: 0;
-  flex-grow: 1;  /* Der Text wächst, um den verfügbaren Platz auszufüllen */
-  text-align: center;  /* Text zentrieren */
+  flex-grow: 1;  
+  text-align: center;  
 }
 
 nav {
@@ -120,15 +120,15 @@ img {
 }
 
 .fullscreen-bg {
-  position: fixed; /* Fixiert das Bild über die gesamte Seite */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Volle Höhe des Viewports */
+  height: 100vh; 
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("startbild.jpg");
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Lässt das Bild im Hintergrund */
+  z-index: -1;
 }
 
 .logo {
