@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f8fcfa;
-  color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -11,7 +11,7 @@ body {
 
 header {
   background-color: #32cd75;
-  color: #050a08;
+  color: #fff; /* Textfarbe auf Weiß ändern */
   padding: 15px;
   display: flex;
   align-items: center;
@@ -28,6 +28,11 @@ header h1 {
   margin: 0;
   flex-grow: 1;
   text-align: center;
+  color: #000;
+}
+
+header h2 {
+  color: #000; /* Setzt die Farbe von h2 auf Schwarz */
 }
 
 nav {
@@ -47,7 +52,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #050a08;
+  color: #000; /* Textfarbe auf Weiß ändern */
   text-decoration: none;
 }
 
@@ -61,7 +66,7 @@ section {
 }
 
 h2 {
-  color: rgb(0, 0, 0);
+  color: #000; /* Setzt die Farbe von h2 auf Schwarz */
   background-color: #8eecb6;
   padding: 10px;
   border-radius: 10px;
@@ -79,6 +84,7 @@ h2 {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 800px; /* Begrenzte Breite für bessere Darstellung */
+  color: #000;
 }
 
 .recipe-img {
@@ -90,12 +96,12 @@ h2 {
 
 .recipe-text {
   flex: 1;
-  color: #000;
+  color: #000; /* Textfarbe auf Weiß ändern */
 }
 
 footer {
   background-color: #333;
-  color: white;
+  color: #fff; /* Textfarbe bleibt bereits Weiß */
   padding: 20px;
   text-align: center;
 }
@@ -121,12 +127,12 @@ footer nav ul li {
 }
 
 footer nav ul li a {
-  color: white;
+  color: #fff; /* Textfarbe auf Weiß ändern */
   text-decoration: none;
 }
 
 footer .social-media a {
-  color: white;
+  color: #fff; /* Textfarbe auf Weiß ändern */
   margin: 0 10px;
   text-decoration: none;
 }
